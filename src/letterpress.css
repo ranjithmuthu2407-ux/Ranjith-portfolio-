@@ -1,0 +1,58 @@
+/* The single retained PR #6 effect: staggered letterpress text transitions. */
+.letterpress,
+.letterpress-visual {
+  display: inline;
+}
+
+.letterpress-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(.24em) rotate(-4deg) scale(.9);
+  transform-origin: 50% 82%;
+  filter: blur(1.2px);
+  will-change: opacity, transform;
+}
+
+.letterpress-char.is-space {
+  display: inline;
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.hero .letterpress-char {
+  animation: letterpressPop .72s cubic-bezier(.18, .72, .22, 1) both;
+  animation-delay: calc(var(--letter-delay, 0ms) + var(--letter-index, 0) * 32ms);
+}
+
+.reveal.visible .letterpress-char {
+  animation: letterpressPop .58s cubic-bezier(.18, .72, .22, 1) both;
+  animation-delay: calc(var(--letter-delay, 0ms) + var(--letter-index, 0) * 28ms);
+}
+
+@keyframes letterpressPop {
+  0% {
+    opacity: 0;
+    transform: translateY(.24em) rotate(-4deg) scale(.9);
+    filter: blur(1.2px);
+  }
+  68% {
+    opacity: 1;
+    transform: translateY(-.035em) rotate(1deg) scale(1.035);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0) scale(1);
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letterpress-char {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
