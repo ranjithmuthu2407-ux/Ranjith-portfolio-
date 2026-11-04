@@ -27,7 +27,7 @@ export const experience = [
 ];
 
 export const projects = [
-  { name: 'Student Record Maintenance System', type: 'Web application', description: 'Student-record workflows with role-based access, encrypted session handling, Supabase-backed records, grade tracking and audit records. The exact public repository URL has not been supplied.', stack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Supabase'], repo: null },
+  { name: 'Student Record Maintenance System', type: 'Web application', description: 'Student-record workflows with role-based access, encrypted session handling, Supabase-backed records, grade tracking and audit records. The exact public repository URL has not been supplied.', stack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Supabase'], repo: 'https://srms-student-record-maintenence-system.onrender.com/auth/login.php' },
   { name: 'Library Management System', type: 'Application', description: 'Book issue and return workflows, timestamped transactions, fine calculations, catalogue indexing and responsive dashboards. The exact public repository URL has not been supplied.', stack: ['Python', 'HTML', 'CSS', 'JavaScript', 'SQL'], repo: null },
   { name: 'OpenTamilOCR', type: 'Open-source contribution', description: 'Tamil document OCR and image-preprocessing work through the VGLUG Foundation community.', stack: ['Python', 'OCR', 'Image Processing'], repo: 'https://github.com/OpenTamilOCR' }
 ];
